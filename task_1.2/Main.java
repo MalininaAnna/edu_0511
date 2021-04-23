@@ -1,24 +1,24 @@
-// *
-//      Закомментируй ненужные строки кода, чтобы на экран вывелась надпись:
-//  2 плюс 3 равно 5
-//Примечание: комментировать строку с объявлением нельзя число.
-// * /
+/*
+Закомментируй ненужные строки кода, чтобы на экран вывелась надпись:
+2 плюс 3 равно 5
+Примечание: комментировать строки с объявлением переменных нельзя.
+*/
 // Пример комментария
 
-public  class  Main {
-    public  static  void  main ( String [] args ) {
-        int a =  3 ;
-        int b =  2 ;
+public class Main {
+    public static void main(String[] args) {
+        int a = 3;
+        int b = 2;
 
-        //Система . из . печать ( " два " );
-        System.out.println(b);
-        System.out.println(" плюс ");
-        //Система . из . печать ( " минус " );
-        System.out.println(a);
-        //Система . из . print ( " три " );
-        System.out.println(" равно ");
-        //Система . из . печать ( " будет " );
-        System.out.println(" пять ");
-        //Система . из . печать (а + б);
+      //  System.out.print("два");
+        System.out.print(b);
+        System.out.print(" плюс ");
+       // System.out.print(" минус ");
+        System.out.print(a);
+       // System.out.print("три");
+        System.out.print(" равно ");
+       // System.out.print(" будет ");
+       // System.out.print("пять");
+        System.out.print(a + b);
     }
 }
