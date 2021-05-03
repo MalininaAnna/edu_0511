@@ -20,7 +20,7 @@ public class Main {
         star.run();
     }
 }
-class Animal {
+abstract class Animal {
         String name;
         int age;
         String eat;
