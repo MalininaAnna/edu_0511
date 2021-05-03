@@ -1,77 +1,62 @@
-/* Создай классы Dog, Cat, Mouse.
-Добавь по три поля в каждый класс, на твой выбор.
-Создай объекты для героев мультика Том и Джерри.
-Так много, как только вспомнишь.
-Пример:
-Mouse jerryMouse = new Mouse("Jerry", 12 , 5),
-где 12 - высота в см,
-5 - длина хвоста в см.
-Требования:
-•	Создай класс Dog.
-•	Создай класс Cat.
-•	В классе Dog должно быть три переменные.
-•	В классе Cat должно быть три переменные.
-•	Должен быть создан хотя бы один объект типа Mouse.
-•	Должен быть создан хотя бы один объект типа Dog.
-•	Должен быть создан хотя бы один объект типа Cat.
+/*4.5
+Создать абстрактный класс Animal с характеристиками животного.
+Создать класс Horse который наследуется от Animal, в классе Horse реализовать метод public void run(){ System.out.println("Игого, я поскакал(а)"); }
+Создать класс Pegasus который наследуется от Horse, в классе Pegasus реализовать метод public void fly(){ System.out.println("Игого, я полетел(а)"); }
+Создать объект лошади и вызвать метод run();
+Создать объект пегаса и вызвать метод fly();
 */
 
 public class Main {
     public static void main(String[] args) {
-        Mouse jerryMouse = new Mouse("Jerry", 12, 5);
-        Dog spikeDog = new Dog("Спайк", "хищник", 3);
-        Cat tomCat = new Cat("Том", "хищник",3);
-        Person mammy = new Person("Два тапка","не на диете", 40);
-        System.out.println(spikeDog.diet);
-        System.out.println(tomCat.age);
-        System.out.println(mammy.name);
-        System.out.println(jerryMouse.height);
+        Dog barbos = new Dog("Барбос",3,"Мясо",4);
+        Horse star = new Horse("Звезда",5,"Овес жую",4,"Я хожу");
+        Pegasus cloud = new Pegasus("Облако", 4,"Радугой питаюсь",4,"Я летаю");
+        System.out.println(barbos.name);
+        System.out.println(star.eat);
+        System.out.println(cloud.limb);
+        System.out.println(cloud.travel);
+        System.out.println(star.travel);
+        barbos.run();
+        cloud.fly();
+        star.run();
     }
 }
-class Mouse {
-    String name;
-    int height;
-    int tail;
+class Animal {
+        String name;
+        int age;
+        String eat;
+        int limb;
 
-    public Mouse(String name, int height, int tail) {
-        this.name = name;
-        this.height = height;
-        this.tail = tail;
+        public Animal(String name, int age, String eat, int limb) {
+            this.name = name;
+            this.age = age;
+            this.eat = eat;
+            this.limb = limb;
+        }
+}
+class Horse extends Animal {
+    String travel;
+    public Horse(String name, int age, String eat, int limb,String travel) {
+        super(name, age, eat, limb);
+        this.travel = travel;
+        }
+    public void run(){
+        System.out.println("Игого, я поскакал(а)");
     }
 }
-
-class Dog {
-    String name;
-    String diet;
-    int age;
-
-    public Dog(String name, String diet, int age) {
-        this.name = name;
-        this.diet = diet;
-        this.age = age;
+class Pegasus extends Horse {
+    public Pegasus(String name, int age, String eat, int limb, String travel) {
+        super(name, age, eat, limb, travel);
+        }
+    public void fly() {
+        System.out.println("Игого, я полетел(а)");
     }
 }
-
-class Cat {
-    String name;
-    String diet;
-    int age;
-
-    public Cat(String name, String diet, int age) {
-        this.name = name;
-        this.diet = diet;
-        this.age = age;
+class Dog extends Animal {
+    public Dog(String name, int age, String eat, int limb) {
+        super(name, age, eat, limb);
     }
-}
-
-class Person {
-    String name;
-    String diet;
-    int age;
-
-    public Person(String name, String diet, int age) {
-        this.name = name;
-        this.diet = name;
-        this.age = age;
+    public void run() {
+        System.out.println("Гав-Гав-Гав, я побежал(а)");
     }
 }
