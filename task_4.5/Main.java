@@ -35,7 +35,7 @@ abstract class Animal {
 }
 class Horse extends Animal {
     String travel;
-    public Horse(String name, int age, String eat, int limb,String travel) {
+    public Horse(String name, int age, String eat, int limb, String travel) {
         super(name, age, eat, limb);
         this.travel = travel;
         }
